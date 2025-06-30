@@ -1,0 +1,9 @@
+How to Run (Conceptual Steps):
+While this project is a design and optimisation exercise, a conceptual run would involve:
+- Setting up the initial AWS infrastructure: Launching the wordfreq-dev EC2 instance, creating S3 buckets (ts-wordfreq-uploading, ts-wordfreq-processing), SQS queues (wordfreq-jobs, wordfreq-results), and a DynamoDB table (wordfreq).
+- Configuring Auto Scaling: Setting up the Auto Scaling Group, CloudWatch alarms (scale-out-alarm, scale-in-alarm), and scaling policies (simple scaling initially, then step scaling).
+- Uploading Data: Copying text files from the uploading S3 bucket to the processing S3 bucket to trigger the WordFreq application.
+- Monitoring: Observing EC2 instance scaling and SQS queue depths via CloudWatch.
+- Analysing Results: Checking DynamoDB for processed word frequency results.
+- Optimising: Iteratively adjusting instance types, ASG capacities, and scaling policy types (e.g., from simple to step scaling) to improve processing time.
+- Conceptualsing Redesign: For Task D and E, this would involve understanding the architectural diagrams and proposed service integrations rather than direct implementation.
